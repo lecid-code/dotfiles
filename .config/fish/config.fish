@@ -8,6 +8,5 @@ end
 
 /home/rsayyid/.local/bin/mise activate fish | source # added by https://mise.run/fish
 
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # go
 set -x -U GOPATH $HOME/.go
