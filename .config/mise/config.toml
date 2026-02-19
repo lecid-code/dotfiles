@@ -1,6 +1,4 @@
 [tools]
 bun = "latest"
 go = "latest"
-java = "latest"
-python = "3.13"
 rust = "latest"
