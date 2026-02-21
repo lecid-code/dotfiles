@@ -14,5 +14,6 @@
     duf
     dust
     hyperfine
+    usage
   ];
 }

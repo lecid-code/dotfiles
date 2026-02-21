@@ -29,9 +29,17 @@
         home-manager switch && cfg add ~/.config/home-manager/ && cfg commit -m "home-manager: $argv[1]"
       '';
       cfg = "git --git-dir=$HOME/.cfg --work-tree=$HOME $argv";
+      load_env = ''
+        for line in (cat .env | string trim)
+          if string match -q --regex '^#' $line; continue; end
+          if string match -q --regex '^\s*$' $line; continue; end
+          set --export (string split '=' $line)[1] (string split '=' $line)[2]
+        end
+      '';
     };
     interactiveShellInit = ''
       /home/rsayyid/.local/bin/mise activate fish | source
+      mise completions fish | source
     '';
     loginShellInit = ''
       source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
