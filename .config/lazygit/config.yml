@@ -1,0 +1,17 @@
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --dark --pager "less -RF"
+gui:
+  theme:
+    activeBorderColor:
+      - green
+      - bold
+    inactiveBorderColor:
+      - white
+    selectedLineBgColor:
+      - reverse
+keybinding:
+  universal:
+    quit: q
+    quitWithoutChangingDirectory: Q
