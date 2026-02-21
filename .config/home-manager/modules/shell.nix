@@ -36,6 +36,12 @@
     loginShellInit = ''
       source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
     '';
+    shellAbbrs = {
+      vi = "nvim";
+      l = "eza --long --all --git";
+      cat = "bat";
+      grep = "grep --color=auto";
+    };
   };
 
   programs.starship = {
