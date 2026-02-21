@@ -95,6 +95,9 @@
     interactiveShellInit = ''
       /home/rsayyid/.local/bin/mise activate fish | source
     '';
+    loginShellInit = ''
+      source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+    '';
   };
 
   programs.neovim = {
