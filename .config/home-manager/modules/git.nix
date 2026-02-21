@@ -24,6 +24,7 @@
       ".bash_history"
       ".bun/install/"
       ".bun/bin/"
+      ".cache/"
     ];
     settings = {
       user.name = "Ramzi Sayyid";
