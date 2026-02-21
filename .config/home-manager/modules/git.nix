@@ -19,6 +19,8 @@
       "*.swp"
       ".direnv"
       ".envrc"
+      "fish_variables"
+      "lazyvim.json"
     ];
     settings = {
       user.name = "Ramzi Sayyid";
