@@ -53,6 +53,7 @@
       df = "duf";
       du = "dust";
       ps = "procs";
+      lg = "lazygit";
     };
   };
 
