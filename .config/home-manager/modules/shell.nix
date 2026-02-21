@@ -36,6 +36,7 @@
           set --export (string split '=' $line)[1] (string split '=' $line)[2]
         end
       '';
+      reload = "source ~/.config/fish/config.fish && echo 'Fish config reloaded'";
     };
     interactiveShellInit = ''
       /home/rsayyid/.local/bin/mise activate fish | source
@@ -49,6 +50,9 @@
       l = "eza --long --all --git";
       cat = "bat";
       grep = "grep --color=auto";
+      df = "duf";
+      du = "dust";
+      ps = "procs";
     };
   };
 
