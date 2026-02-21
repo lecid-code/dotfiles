@@ -20,6 +20,7 @@
     ./modules/shell.nix
     ./modules/git.nix
     ./modules/editor.nix
+    ./modules/terminal.nix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
