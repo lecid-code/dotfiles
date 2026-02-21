@@ -19,6 +19,7 @@
     ./modules/packages.nix
     ./modules/shell.nix
     ./modules/git.nix
+    ./modules/editor.nix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -38,9 +39,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
 }
