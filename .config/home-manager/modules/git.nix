@@ -21,6 +21,9 @@
       ".envrc"
       "fish_variables"
       "lazyvim.json"
+      ".bash_history"
+      ".bun/install/"
+      ".bun/bin/"
     ];
     settings = {
       user.name = "Ramzi Sayyid";
