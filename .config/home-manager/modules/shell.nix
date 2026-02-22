@@ -39,7 +39,7 @@
       reload = "source ~/.config/fish/config.fish && echo 'Fish config reloaded'";
     };
     interactiveShellInit = ''
-      /home/rsayyid/.local/bin/mise activate fish | source
+      mise activate fish | source
       mise completions fish | source
     '';
     loginShellInit = ''

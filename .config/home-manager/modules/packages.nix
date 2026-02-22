@@ -15,5 +15,6 @@
     dust
     hyperfine
     usage
+    mise
   ];
 }
