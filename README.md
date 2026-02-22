@@ -92,13 +92,46 @@ cfg push
 
 ## Bootstrap a New Machine
 
-On a fresh Fedora machine, run:
+### 1. Install Nix
 
 ```bash
-curl -fsSL https://gist.github.com/lecid-code/d4f8b02f677ae604935e94bc0f884ff5/raw/bootstrap.sh | bash
+sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
 
-This handles the full setup automatically — Nix, Home Manager, dotfiles checkout, Fish as login shell, and mise runtimes. See the [bootstrap gist](https://gist.github.com/lecid-code/d4f8b02f677ae604935e94bc0f884ff5) for details.
+### 2. Install Home Manager
+
+```bash
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+nix-shell '<home-manager>' -A install
+```
+
+### 3. Clone dotfiles repo
+
+```bash
+git clone --bare https://github.com/lecid-code/dotfiles.git $HOME/.cfg
+alias cfg='git --git-dir=$HOME/.cfg --work-tree=$HOME'
+cfg checkout
+cfg config --local status.showUntrackedFiles no
+```
+
+### 4. Apply Home Manager config
+
+```bash
+home-manager switch
+```
+
+### 5. Set Fish as login shell
+
+```bash
+chsh -s $(which fish)
+```
+
+### 6. Install mise runtimes
+
+```bash
+mise install
+```
 
 ---
 
