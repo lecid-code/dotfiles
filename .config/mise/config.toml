@@ -1,6 +1,4 @@
 [tools]
 bun = "latest"
-clang = "latest"
 go = "latest"
-java = "latest"
 rust = "latest"
