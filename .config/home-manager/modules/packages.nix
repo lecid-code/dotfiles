@@ -9,6 +9,7 @@
     procs
     bottom
     lazygit
+    ripgrep
     tealdeer
     gping
     duf
