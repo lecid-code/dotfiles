@@ -49,6 +49,7 @@ in
     '';
     loginShellInit = ''
       source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+      fastfetch
     '';
     shellAbbrs = {
       vi = "nvim";

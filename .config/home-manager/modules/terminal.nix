@@ -8,6 +8,10 @@
     extraOptions = [ "--group-directories-first" "--color=auto" ];
   };
 
+  programs.fastfetch = {
+    enable = true;
+  };
+
   programs.fzf = {
     enable = true;
     enableFishIntegration = true;
