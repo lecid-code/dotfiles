@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
+
+let 
+  presetToml = builtins.readFile "${pkgs.starship}/share/starship/presets/pure-preset.toml";
+  preset = builtins.fromTOML presetToml;
+in
 {
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -60,12 +65,6 @@
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
-    settings = {
-      add_newline = false;
-      command_timeout = 500;
-      git_branch.symbol = " ";
-      directory.truncation_length = 3;
-      nix_shell.symbol = "❄️ ";
-    };
+    settings = lib.recursiveUpdate preset { };
   };
 }
