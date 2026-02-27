@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.eza = {
     enable = true;
@@ -8,9 +8,9 @@
     extraOptions = [ "--group-directories-first" "--color=auto" ];
   };
 
-  programs.fastfetch = {
-    enable = true;
-  };
+  programs.fastfetch.enable = true;
+  programs.atuin.enable = true;
+  programs.navi.enable = true;
 
   programs.fzf = {
     enable = true;

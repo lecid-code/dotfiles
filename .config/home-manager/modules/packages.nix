@@ -1,21 +1,20 @@
 { config, pkgs, ... }: 
 {
   home.packages = with pkgs; [
-    gh
-    glab
-    fd
-    jq
-    yq-go
-    procs
-    bottom
-    lazygit
-    ripgrep
-    tealdeer
-    gping
-    duf
-    dust
-    hyperfine
-    usage
-    mise
+    gh          # Github CLI
+    glab        # Gitlab CLI
+    fd          # faster alternative to find
+    jq          # JSON query parser
+    yq-go       # YAML parser
+    procs       # Modern replacement to ps
+    btop        # Resource monitor
+    ripgrep     # Faster grep
+    tealdeer    # Example based manpages
+    gping       # Ping with a graph
+    duf         # How much free space is available
+    dust        # Find out what is using space
+    hyperfine   # Command line benchmarking tool
+    #    usage       
+    mise        # Package manager - mainly used for dev tools
   ];
 }

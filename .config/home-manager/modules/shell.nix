@@ -1,9 +1,5 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
-let 
-  presetToml = builtins.readFile "${pkgs.starship}/share/starship/presets/pure-preset.toml";
-  preset = builtins.fromTOML presetToml;
-in
 {
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -50,6 +46,9 @@ in
     loginShellInit = ''
       source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
     '';
+    plugins = [
+      { name = "pure"; src = pkgs.fishPlugins.pure; }
+    ];
     shellAbbrs = {
       vi = "nvim";
       l = "eza --long --all --git";
@@ -60,11 +59,5 @@ in
       ps = "procs";
       lg = "lazygit";
     };
-  };
-
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-    settings = lib.recursiveUpdate preset { };
   };
 }
