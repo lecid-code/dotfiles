@@ -32,8 +32,3 @@ if status is-interactive
     mise activate fish | source
     mise completions fish | source
 end
-
-# Login shell init
-if status is-login
-    source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
-end
