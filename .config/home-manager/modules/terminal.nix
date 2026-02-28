@@ -35,4 +35,9 @@
     enableFishIntegration = true;
     shellWrapperName = "y";
   };
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
 }
