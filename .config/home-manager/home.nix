@@ -7,7 +7,7 @@
   imports = [
     ./modules/packages.nix
     # ./modules/shell.nix
-    ./modules/git.nix
+    #./modules/git.nix
     #./modules/editor.nix
     ./modules/terminal.nix
   ];

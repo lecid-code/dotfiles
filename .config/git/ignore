@@ -1,0 +1,10 @@
+.DS_Store
+*.swp
+.direnv
+.envrc
+fish_variables
+lazyvim.json
+.bash_history
+.bun/install/
+.bun/bin/
+.cache/
