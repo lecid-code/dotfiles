@@ -14,7 +14,7 @@
     duf         # How much free space is available
     dust        # Find out what is using space
     hyperfine   # Command line benchmarking tool
-    #    usage       
+    usage       # Needed for mise completions to work
     mise        # Package manager - mainly used for dev tools
   ];
 }
