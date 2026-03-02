@@ -36,10 +36,4 @@ if ! command -v mise &>/dev/null; then
   curl https://mise.run | sh
 fi
 
-# Set fish as default shell only if not already set
-if [ "$SHELL" != "$(which fish)" ]; then
-  echo "$(which fish)" | sudo tee -a /etc/shells
-  chsh -s "$(which fish)"
-fi
-
 echo "Done. Restart your terminal."
