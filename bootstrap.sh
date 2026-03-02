@@ -2,7 +2,8 @@
 set -e
 
 # COPR repositories
-sudo dnf copr enable lihaohong/yazi
+sudo dnf copr enable lihaohong/yazi -y
+sudo dnf copr enable atim/lazygit -y
 
 # System tools via DNF
 sudo dnf install -y --skip-unavailable \
@@ -22,6 +23,10 @@ sudo dnf install -y --skip-unavailable \
   procs \
   duf \
   du-dust \
+  tree-sitter-cli \
+  gcc \
+  make \
+  unzip \
   yazi
 
 # Tools not available in Fedora repos
