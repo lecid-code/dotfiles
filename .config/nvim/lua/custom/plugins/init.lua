@@ -8,6 +8,13 @@
 return {
 	-- lazy.nvim
 	{
+		"rebelot/kanagawa.nvim",
+		priority = 1000, -- Make sure to load this before all other start plugins
+		config = function()
+			vim.cmd.colorscheme("kanagawa-dragon")
+		end,
+	},
+	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		opts = {
