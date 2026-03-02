@@ -4,6 +4,7 @@ set -e
 # COPR repositories
 sudo dnf copr enable lihaohong/yazi -y
 sudo dnf copr enable atim/lazygit -y
+sudo dnf copr enable gierth/tools-rust -y
 
 # System tools via DNF
 sudo dnf install -y --skip-unavailable \
@@ -27,14 +28,8 @@ sudo dnf install -y --skip-unavailable \
   gcc \
   make \
   unzip \
+  eza \
   yazi
-
-# Tools not available in Fedora repos
-if ! command -v cargo &>/dev/null; then
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-  source "$HOME/.cargo/env"
-fi
-cargo install eza usage-cli
 
 # Install mise only if not already installed
 if ! command -v mise &>/dev/null; then
