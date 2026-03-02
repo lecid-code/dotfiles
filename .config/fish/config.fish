@@ -18,14 +18,13 @@ fish_add_path $HOME/.bun/bin
 # Abbreviations
 abbr --add vi nvim
 abbr --add l "eza --long --all --git"
+abbr --add ls "eza"
 abbr --add cat bat
 abbr --add grep "grep --color=auto"
 abbr --add df duf
 abbr --add du dust
 abbr --add ps procs
 abbr --add lg lazygit
-abbr --add hme "home-manager edit"
-abbr --add hms "home-manager switch"
 
 # Interactive shell init
 if status is-interactive
