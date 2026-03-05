@@ -17,7 +17,8 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.o.mouse = "a"
+-- vim.o.mouse = "a"
+vim.o.mouse = ""
 
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
@@ -558,7 +559,7 @@ require("lazy").setup({
 			---@type table<string, vim.lsp.Config>
 			local servers = {
 				-- clangd = {},
-				-- gopls = {},
+				gopls = {},
 				-- pyright = {},
 				-- rust_analyzer = {},
 				--
@@ -566,9 +567,9 @@ require("lazy").setup({
 				--    https://github.com/pmizio/typescript-tools.nvim
 				--
 				-- But for many setups, the LSP (`ts_ls`) will work just fine
-				-- ts_ls = {},
+				ts_ls = {},
 
-				stylua = {}, -- Used to format Lua code
+				-- stylua = {}, -- Used to format Lua code
 
 				-- Special Lua Config, as recommended by neovim help docs
 				lua_ls = {
@@ -615,6 +616,11 @@ require("lazy").setup({
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				-- You can add other tools here that you want Mason to install
+				"stylua",
+				"prettierd",
+				"goimports",
+				"eslint_d",
+				"golangci-lint",
 			})
 
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
@@ -660,11 +666,15 @@ require("lazy").setup({
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
+				go = { "goimports", "gofmt" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				--
 				-- You can use 'stop_after_first' to run the first available formatter from the list
-				-- javascript = { "prettierd", "prettier", stop_after_first = true },
+				typescript = { "prettierd" },
+				typescriptreact = { "prettierd" },
+				javascript = { "prettierd" },
+				javascriptreact = { "prettierd" },
 			},
 		},
 	},
@@ -831,6 +841,14 @@ require("lazy").setup({
 				"query",
 				"vim",
 				"vimdoc",
+				"go",
+				"gomod",
+				"gosum",
+				"typescript",
+				"tsx",
+				"javascript",
+				"css",
+				"json",
 			}
 			require("nvim-treesitter").install(parsers)
 			vim.api.nvim_create_autocmd("FileType", {

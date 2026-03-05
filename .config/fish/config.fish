@@ -7,7 +7,7 @@ set -gx LC_ALL en_US.UTF-8
 set -gx LC_CTYPE en_US.UTF-8
 set -gx FZF_DEFAULT_OPTS "-m --bind='ctrl-o:execute(nvim {})+abort'"
 set -gx FZF_DEFAULT_COMMAND "rg --files"
-set -gx BAT_THEME Dracula
+set -gx BAT_THEME Kanagawa
 
 # PATH
 fish_add_path $HOME/.go/bin
