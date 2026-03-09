@@ -9,6 +9,7 @@ sudo dnf copr enable gierth/tools-rust -y
 # System tools via DNF
 sudo dnf install -y --skip-unavailable \
   fish \
+  tmux \
   neovim \
   git \
   git-delta \
@@ -29,6 +30,8 @@ sudo dnf install -y --skip-unavailable \
   make \
   unzip \
   eza \
+  gawk \
+  tealdeer \
   yazi
 
 # Install mise only if not already installed
