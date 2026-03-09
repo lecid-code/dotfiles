@@ -25,6 +25,7 @@ abbr --add df duf
 abbr --add du dust
 abbr --add ps procs
 abbr --add lg lazygit
+abbr --add prsdb "psql -d performance_reviews"
 
 # Interactive shell init
 if status is-interactive
