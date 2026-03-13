@@ -31,6 +31,7 @@ sudo dnf install -y --skip-unavailable \
   unzip \
   eza \
   gawk \
+  most \
   tealdeer \
   yazi
 
