@@ -11,9 +11,9 @@ set -gx FZF_DEFAULT_COMMAND "rg --files"
 set -gx BAT_THEME Nord
 
 # PATH
+fish_add_path $HOME/bin
 fish_add_path $HOME/.go/bin
 fish_add_path $HOME/.local/bin
-fish_add_path $HOME/bin
 fish_add_path $HOME/.bun/bin
 
 # Abbreviations
