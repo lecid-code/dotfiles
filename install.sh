@@ -1,43 +1,44 @@
 #!/bin/bash
 set -e
 
-# COPR repositories
+# 1. Check for existing setup immediately
+if [ -d "$HOME/.cfg" ]; then
+  echo "Configuration (.cfg) already exists. Skipping setup."
+  exit 0
+fi
+
+# 2. System Updates & Repos
 sudo dnf copr enable atim/lazygit -y
 sudo dnf copr enable gierth/tools-rust -y
-
-# Update system to latest
 sudo dnf update -y
 
-# Install core development tools
-sudo dnf groupinstall -y "Development Tools"
-sudo dnf groupinstall -y "C Development Tools and Libraries"
-
-# Core CLI Tools
+# 3. Install development toolchain and CLI Tools
+sudo dnf group install -y development-tools
 sudo dnf install -y \
-  ripgrep fzf fish bat zoxide fd-find tealdeer unzip
-
-# Tools from COPR
-sudo dnf install -y \
+  ripgrep fzf fish bat zoxide fd-find tealdeer unzip \
   lazygit yazi eza jaq git-cliff hurl
 
-echo "System updated and software installed..."
-
-# Install mise only if not already installed
+# 4. Install mise
 if ! command -v mise &>/dev/null; then
   curl https://mise.run | sh
 fi
 
+echo "Packages installed. Initializing dotfiles..."
+
+# 5. Clone and Checkout Dotfiles
 git clone --bare https://github.com/lecid-code/dotfiles.git $HOME/.cfg
-git --git-dir=$HOME/.cfg --work-tree=$HOME checkout
-git --git-dir=$HOME/.cfg --work-tree=$HOME config --local status.showUntrackedFiles no
 
-echo "Dotfiles cloned..."
+# Define a temporary function for the bare repo commands
+function config {
+  /usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME "$@"
+}
 
-# Use full path for mise
+# Force checkout to overwrite default system files (like .bashrc)
+config checkout -f
+config config --local status.showUntrackedFiles no
+
+# 6. Final System Changes
+sudo chsh -s "$(which fish)" "$USER"
 $HOME/.local/bin/mise install
 
-echo "Development tools installed..."
-
-chsh -s $(which fish)
-
-echo "Shell changed to Fish. Restart server."
+echo "Setup complete. Fish shell is now default. Please restart your session."
