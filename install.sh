@@ -26,7 +26,7 @@ fi
 echo "Packages installed. Initializing dotfiles..."
 
 # 5. Clone and Checkout Dotfiles
-git clone --bare https://github.com/lecid-code/dotfiles.git $HOME/.cfg
+git clone --bare git@github.com:lecid-code/dotfiles.git $HOME/.cfg
 
 # Define a temporary function for the bare repo commands
 function config {
