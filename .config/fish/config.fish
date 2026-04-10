@@ -22,14 +22,4 @@ abbr --add l "eza --long --all --git"
 abbr --add ls "eza"
 abbr --add cat bat
 abbr --add grep "grep --color=auto"
-abbr --add df duf
-abbr --add du dust
-abbr --add ps procs
 abbr --add lg lazygit
-abbr --add prsdb "psql -d performance_reviews"
-
-# Interactive shell init
-if status is-interactive
-    mise activate fish | source
-    mise completions fish | source
-end
