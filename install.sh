@@ -8,15 +8,11 @@ if [ -d "$HOME/.cfg" ]; then
 fi
 
 # 2. System Updates & Repos
-sudo dnf copr enable atim/lazygit -y
-sudo dnf copr enable gierth/tools-rust -y
 sudo dnf update -y
 
 # 3. Install development toolchain and CLI Tools
 sudo dnf group install -y development-tools
-sudo dnf install -y \
-  ripgrep fzf fish bat zoxide fd-find tealdeer unzip \
-  lazygit yazi eza jaq git-cliff hurl
+sudo dnf install -y fish tealdeer
 
 # 4. Install mise
 if ! command -v mise &>/dev/null; then

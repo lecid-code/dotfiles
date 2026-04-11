@@ -1,10 +1,32 @@
 [tools]
+# Language runtimes
 bun = "latest"
 go = "latest"
 rust = "latest"
 node = "lts"
-usage = "latest"
-just = "latest"
 zig = "latest"
+
+# Build tools
+just = "latest"
+usage = "latest"
+
+# Terminal
 tmux = "latest"
 neovim = "latest"
+
+# File/search tools
+eza = "latest"
+yazi = "latest"
+fd = "latest"
+fzf = "latest"
+ripgrep = "latest"
+bat = "latest"
+zoxide = "latest"
+
+# Git tools
+lazygit = "latest"
+git-cliff = "latest"
+
+# HTTP/data tools
+hurl = "latest"
+jaq = "latest"
