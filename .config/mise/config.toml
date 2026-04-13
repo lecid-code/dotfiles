@@ -11,7 +11,6 @@ just = "latest"
 usage = "latest"
 
 # Terminal
-tmux = "latest"
 neovim = "latest"
 
 # File/search tools

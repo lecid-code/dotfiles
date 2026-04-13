@@ -12,7 +12,7 @@ sudo dnf update -y
 
 # 3. Install development toolchain and CLI Tools
 sudo dnf group install -y development-tools
-sudo dnf install -y fish tealdeer
+sudo dnf install -y fish tealdeer tmux
 
 # 4. Install mise
 if ! command -v mise &>/dev/null; then
