@@ -33,7 +33,11 @@ function config {
 config checkout -f
 config config --local status.showUntrackedFiles no
 
-# 6. Final System Changes
+# 6. Install the Tmux Plugin Manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "Tmux Plugin Manager downloaded - install plugins using Prefix + I on first run"
+
+# 7. Final System Changes
 sudo chsh -s "$(which fish)" "$USER"
 $HOME/.local/bin/mise install
 
