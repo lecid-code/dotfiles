@@ -29,3 +29,5 @@ git-cliff = "latest"
 # HTTP/data tools
 hurl = "latest"
 jaq = "latest"
+lua = "latest"
+tree-sitter = "latest"
