@@ -23,3 +23,4 @@ abbr --add ls "eza"
 abbr --add cat bat
 abbr --add grep "grep --color=auto"
 abbr --add lg lazygit
+abbr --add now TZ="America/Chicago" date
