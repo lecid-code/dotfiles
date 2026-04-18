@@ -2,8 +2,10 @@
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx GOPATH $HOME/.go
-set -gx PAGER most
-set -gx MANPAGER most
+set -gx PAGER less
+# set -gx MANPAGER less
+set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -gx MANROFFOPT "-c"
 set -gx LC_ALL en_US.UTF-8
 set -gx LC_CTYPE en_US.UTF-8
 set -gx FZF_DEFAULT_OPTS "-m --bind='ctrl-o:execute(nvim {})+abort'"
