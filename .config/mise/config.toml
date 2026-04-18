@@ -1,14 +1,11 @@
 [tools]
 # Language runtimes
-bun = "latest"
-go = "latest"
-rust = "latest"
+bun = "1"
+go = "1"
 node = "lts"
-zig = "latest"
 
 # Build tools
 just = "latest"
-usage = "latest"
 
 # Terminal
 neovim = "latest"
@@ -29,5 +26,3 @@ git-cliff = "latest"
 # HTTP/data tools
 hurl = "latest"
 jaq = "latest"
-lua = "latest"
-tree-sitter = "latest"
