@@ -31,14 +31,7 @@
 
 [core]
     autocrlf = input
-	pager = bat
+    pager = bat --plain --paging=always
 
 [interactive]
-    diffFilter = delta --color-only
-
-[delta]
-    navigate = true
-    light = false
-    side-by-side = false
-    line-numbers = true
-    syntax-theme = Dracula
+    diffFilter = bat --plain --color=always

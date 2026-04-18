@@ -1,3 +1,6 @@
 .cfg
-
 .config/nvim/lazy-lock.json
+.config/nvim/lazyvim.json
+fish_variables
+.bash_history
+.bun/
