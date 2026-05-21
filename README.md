@@ -14,7 +14,7 @@ Packages are installed via **DNF** (system tools) and language runtimes are mana
 ## Bootstrap a New Machine
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/lecid-code/dotfiles/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/lecid-code/dotfiles/main/scripts/install.sh | bash
 ```
 
 ---
