@@ -26,3 +26,6 @@ git-cliff = "latest"
 # HTTP/data tools
 hurl = "latest"
 jaq = "latest"
+"aqua:tealdeer-rs/tealdeer" = "latest"
+tmux = "latest"
+python = "latest"
