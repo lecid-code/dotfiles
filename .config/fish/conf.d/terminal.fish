@@ -3,7 +3,7 @@ if status is-interactive
 
     fish_add_path --path $HOME/.local/bin
     fish_add_path /usr/sbin /usr/local/sbin ~/bin
-    fish_add_path "/home/rsayyid/.bun/bin"
+    fish_add_path "$HOME/.bun/bin"
 
     command -q mise && mise activate fish | source
     command -q fzf && fzf --fish | source
