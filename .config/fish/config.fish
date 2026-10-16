@@ -10,9 +10,13 @@ set -gx FZF_DEFAULT_OPTS "-m --bind='ctrl-o:execute(nvim {})+abort'"
 set -gx FZF_DEFAULT_COMMAND "fd --type f --hidden --follow --exclude .git"
 set -gx BAT_THEME Nord
 
+# Set sudo editor
+set -gx SUDO_EDITOR ~/.local/share/mise/shims/nvim
+
 set -gx TZ America/Chicago
 
 # Abbreviations
+abbr --add se sudoedit
 abbr --add vi nvim
 abbr --add l "eza --long --all --git"
 abbr --add ls eza
